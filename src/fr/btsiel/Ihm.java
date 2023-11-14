@@ -108,7 +108,7 @@ public class Ihm {
             }
 
 //            calcul des points gagner grace a ses victoires et a ses victoire bonus
-            if (nombrevictoireTotal == nombreVictoireMax){
+            if (nombrevictoireTotal >= nombreVictoireMax){
                 System.out.println("nous allons calculer votre bonus de victoire");
                 System.out.println("veuillez donner votre nombre de defaite a echelon égale ");
                 nombreDefaiteEchelonEgale = In.readInteger();
@@ -121,25 +121,19 @@ public class Ihm {
 
                 bonusVictory = nombrevictoireTotal - nombreDefaiteEchelonEgale - (2 * nombreDefaiteEchelonInferieur) - ( 5* nombreDefaiteEchelon2);
 
-                switch(bonusVictory){
-                    case 0,1,2,3,4:
-                        nombrevictoireTotal += 1;
-                        break;
-                    case 5,6,7,8,9:
-                        nombrevictoireTotal += 2;
-                        break;
-                    case 10,11,12,13,14:
-                        nombrevictoireTotal += 3;
-                        break;
-                    case 15,16,17,18,19:
-                        nombrevictoireTotal += 4;
-                        break;
-                    case 20,21,22,23,24:
-                        nombrevictoireTotal += 5;
-                        break;
-                    default:
-                        nombrevictoireTotal += 6;
-                }
+               if(bonusVictory >= 25){
+                   nombrevictoireTotal += 6;
+               }else if(bonusVictory >= 20){
+                   nombrevictoireTotal += 5;
+               }else if (bonusVictory >= 15){
+                   nombrevictoireTotal += 4;
+               }else if (bonusVictory >= 10){
+                   nombrevictoireTotal += 3;
+               } else if (bonusVictory >= 5){
+                   nombrevictoireTotal += 2;
+               }else{
+                   nombrevictoireTotal += 1;
+               }
             }
             for (int i = 0; i < nombrevictoireTotal; i++) {
                 System.out.println("""
