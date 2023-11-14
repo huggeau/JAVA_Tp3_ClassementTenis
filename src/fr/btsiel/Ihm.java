@@ -139,7 +139,6 @@ public class Ihm {
                         break;
                     default:
                         nombrevictoireTotal += 6;
-                        break;
                 }
             }
             for (int i = 0; i < nombrevictoireTotal; i++) {
